@@ -283,7 +283,7 @@ class Gen:
                 continue
 
             if response.status_code == 200:
-                soup = BeautifulSoup(response.content,'lxml')
+                soup = BeautifulSoup(response.content,'html.parser')
                 try:
                     csrf_token = soup.find("input",attrs={'name':'csrf_token'})['value']
                 except:
